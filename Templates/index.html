@@ -23,8 +23,8 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">NASA Mars News</h5>
-                        <p class="card-text">{{listings.news_title}}</p>
+                        <h3 class="card-title">NASA Mars News</h3>
+                        <h4 class="card-text">{{listings.news_title}}</h4>
                         <p class="card-text">{{listings.news_body}}</p>
                     </div>
                 </div>
@@ -33,15 +33,27 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">JPL Mars Featured Image</h5>
+                        <h3 class="card-title">JPL Mars Featured Image</h3>
                         <p class="card-text">{{listings.full_image_url}}</p>
+                        <a href="{{listings.full_image_url}}" target="_blank" class="btn btn-primary">Open Image</a>
                     </div>
                 </div>
             </div>
-
-
-
-
+        </div>
+        <div class="row">
+            <!-- Mars Hemispheres -->
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Mars Hemispheres</h3>
+                        {% for item in listings.hemisphere_image_urls %}
+                        <p class="card-text">{{item.title}}</p>
+                        <p class="card-text">{{item.img_url}}</p>
+                        <b><a href="{{item.img_url}}" target="_blank" class="card-link">Open Image</a></b>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
         </div>
 </body>
 

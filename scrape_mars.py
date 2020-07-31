@@ -29,7 +29,6 @@ def scrape():
     # Extracting JPL Mars Space Images - Featured Image
     url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url)
-
     # extracting featured image
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
@@ -39,5 +38,18 @@ def scrape():
     print(image_url)
     mars_dict["full_image_url"] = image_url
 
+    # Mars Weather Tweet
+    # Mars Facts
+    # Mars Hemispheres
+    mars_dict["hemisphere_image_urls"] = [
+        {"title": "Cerberus Hemisphere",
+            "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/cerberus_enhanced.tif/full.jpg"},
+        {"title": "Schiaparelli Hemisphere",
+            "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/schiaparelli_enhanced.tif/full.jpg"},
+        {"title": "Syrtis Major Hemisphere",
+            "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/syrtis_major_enhanced.tif/full.jpg"},
+        {"title": "Valles Marineris Hemisphere",
+            "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/valles_marineris_enhanced.tif/full.jpg"},
+    ]
     # return mars dictionary to the route
     return mars_dict
