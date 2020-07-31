@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Planet Mars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Checkout Mars Weather!</a></p>
+        </div>
+
+        <!-- display mars data in card -->
+        <div class="row">
+            <!-- latest News Title and Paragraph Text -->
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">NASA Mars News</h5>
+                        <p class="card-text">{{listings.news_title}}</p>
+                        <p class="card-text">{{listings.news_body}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- JPL Mars Space Images - Featured Image -->
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">JPL Mars Featured Image</h5>
+                        <p class="card-text">{{listings.full_image_url}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+</body>
+
+</html>
