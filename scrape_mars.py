@@ -3,6 +3,7 @@ from splinter import Browser
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
+from urllib.parse import urlparse
 
 
 def init_browser():
@@ -35,11 +36,21 @@ def scrape():
     featured_image_section = soup.find(
         'section', class_="primary_media_feature").article['style']
     image_url = 'https://www.jpl.nasa.gov' + featured_image_section[23:75]
-    print(image_url)
     mars_dict["full_image_url"] = image_url
 
     # Mars Weather Tweet
+
     # Mars Facts
+    u = urlparse("https://space-facts.com/mars")
+    url = u.geturl()
+    print(url)
+    mars_table = pd.read_html(url)
+    df = mars_table[0]
+    df.columns = ['Matrix Type', 'Information']
+    # converting to dict
+    data_dict = df.to_dict()
+    mars_dict["mars_facts"] = data_dict
+
     # Mars Hemispheres
     mars_dict["hemisphere_image_urls"] = [
         {"title": "Cerberus Hemisphere",
