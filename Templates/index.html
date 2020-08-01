@@ -42,21 +42,23 @@
             </div>
             <!-- Mars Facts -->
             <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title">Mars Facts</h1>
+                <h1 class="card-title">Mars Facts</h1>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Matrix Type</th>
+                            <th scope="col">Mars Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         {% for item in listings.mars_facts %}
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <p class="card-text">{{item.MatrixType}}</p>
-                                    <p class="card-text">{{item.Information}}</p>
-                                </div>
-                            </div>
-                        </div>
+                        <tr>
+                            <td>{{item.MatrixType}}</td>
+                            <td>{{item.Information}}</td>
+                        </tr>
                         {% endfor %}
-                    </div>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="row">
