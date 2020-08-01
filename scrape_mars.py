@@ -38,8 +38,6 @@ def scrape():
     image_url = 'https://www.jpl.nasa.gov' + featured_image_section[23:75]
     mars_dict["full_image_url"] = image_url
 
-    # Mars Weather Tweet
-
     # Mars Facts
     u = urlparse("https://space-facts.com/mars")
     url = u.geturl()
