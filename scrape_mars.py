@@ -3,7 +3,6 @@ from splinter import Browser
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
-from urllib.parse import urlparse
 
 
 def init_browser():
@@ -39,14 +38,12 @@ def scrape():
     mars_dict["full_image_url"] = image_url
 
     # Mars Facts
-    u = urlparse("https://space-facts.com/mars")
-    url = u.geturl()
-    print(url)
+    url = "https://space-facts.com/mars"
     mars_table = pd.read_html(url)
     df = mars_table[0]
-    df.columns = ['Matrix Type', 'Information']
+    df.columns = ['MatrixType', 'Information']
     # converting to dict
-    data_dict = df.to_dict()
+    data_dict = df.to_dict(orient='records')
     mars_dict["mars_facts"] = data_dict
 
     # Mars Hemispheres

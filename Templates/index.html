@@ -45,6 +45,16 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">Mars Facts</h1>
+                        {% for item in listings.mars_facts %}
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">{{item.MatrixType}}</p>
+                                    <p class="card-text">{{item.Information}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
