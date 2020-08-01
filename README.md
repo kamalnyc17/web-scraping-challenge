@@ -9,8 +9,4 @@
 #### Mars Hemispheres - We will scrape USGS Astrogeology site to obtain high resolution images for each of Mar's hemispheres and display Hemisphere title and high resolution hemisphere image.
 
 ## Note
-#### Screenshots of the final application is stored in the word document in the root folder of this repo.
-
-
-
-
+#### Screenshots of the final application is stored in a word document in the root folder of this repo.
